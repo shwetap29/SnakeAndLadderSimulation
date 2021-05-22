@@ -11,11 +11,12 @@ public class SnakeAndLadderSimulation {
         int Position = 0;
         int newPosition = 0;
         int WinPosition = 100;
+        int count = 0;
 
         while (Position < WinPosition) {
             int DieRolled = (int) (Math.random() * 6) + 1;
             int checkOption = (int) (Math.random() * 3);
-
+             count++;
             switch (checkOption) {
                 case NO_PLAY:
                     newPosition = 0;
@@ -25,6 +26,7 @@ public class SnakeAndLadderSimulation {
                     break;
                 case SNAKE:
                     newPosition = -DieRolled;
+                    break;
             }
             Position = Position + newPosition;
             if (Position < 0) {
@@ -35,5 +37,6 @@ public class SnakeAndLadderSimulation {
             }
             System.out.println("You are now at " + Position + "th" + " position");
         }
+           System.out.println("\nCongratulations you won! \n after Die Rolled " + count+"position");
     }
 }
